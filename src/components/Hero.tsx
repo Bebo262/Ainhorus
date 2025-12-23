@@ -1,156 +1,389 @@
 import { motion } from 'framer-motion'
-import { Shield, Zap, Eye, MapPin, Sparkles } from 'lucide-react'
-import './Hero.css'
-
-const features = [
-  { icon: Shield, text: 'AI-Powered Safety' },
-  { icon: Zap, text: 'Real-Time Detection' },
-  { icon: Eye, text: 'Smart Monitoring' },
-  { icon: MapPin, text: 'GPS Tracking' }
-]
+import { ArrowRight, Play, Shield, Zap, MapPin, Camera } from 'lucide-react'
+import Button from './ui/Button'
+import Container from './ui/Container'
 
 const Hero = () => {
   return (
-    <section className="hero">
-      <div className="hero-background">
-        <div className="shape shape-1"></div>
-        <div className="shape shape-2"></div>
-        <div className="shape shape-3"></div>
-        <div className="shape shape-4"></div>
-        <div className="shape shape-5"></div>
-        <div className="shape shape-6"></div>
-        <div className="grid-pattern"></div>
-        <div className="gradient-orb orb-1"></div>
-        <div className="gradient-orb orb-2"></div>
-        <div className="gradient-orb orb-3"></div>
-        <div className="particle particle-1"></div>
-        <div className="particle particle-2"></div>
-        <div className="particle particle-3"></div>
-        <div className="particle particle-4"></div>
-        <div className="particle particle-5"></div>
-        <div className="floating-elements">
-          <div className="floating-element fe-1"></div>
-          <div className="floating-element fe-2"></div>
-          <div className="floating-element fe-3"></div>
-        </div>
-        <div className="light-rays"></div>
-      </div>
-      
-      <div className="container">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-50 via-white to-primary-50/30">
+      {/* Enhanced Animated Background Elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {/* Large gradient orbs with enhanced animations */}
+        <motion.div 
+          className="absolute top-20 left-10 w-96 h-96 bg-gradient-to-br from-primary-400/35 to-primary-600/25 rounded-full blur-3xl"
+          animate={{
+            scale: [1, 1.2, 1],
+            x: [0, 50, 0],
+            y: [0, 30, 0],
+          }}
+          transition={{
+            duration: 20,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        />
+        <motion.div 
+          className="absolute bottom-20 right-10 w-[500px] h-[500px] bg-gradient-to-br from-blue-400/30 to-primary-500/20 rounded-full blur-3xl"
+          animate={{
+            scale: [1, 1.15, 1],
+            x: [0, -40, 0],
+            y: [0, -50, 0],
+          }}
+          transition={{
+            duration: 25,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 1
+          }}
+        />
+        <motion.div 
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-gradient-to-br from-primary-300/25 to-blue-200/15 rounded-full blur-3xl"
+          animate={{
+            scale: [1, 1.3, 1],
+            rotate: [0, 180, 360],
+          }}
+          transition={{
+            duration: 30,
+            repeat: Infinity,
+            ease: "linear"
+          }}
+        />
+        
+        {/* Additional floating shapes with motion */}
+        <motion.div 
+          className="absolute top-40 right-20 w-64 h-64 bg-gradient-to-br from-cyan-400/25 to-blue-500/20 rounded-full blur-2xl"
+          animate={{
+            x: [0, 30, -20, 0],
+            y: [0, -40, 20, 0],
+            scale: [1, 1.1, 0.9, 1],
+          }}
+          transition={{
+            duration: 15,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        />
+        <motion.div 
+          className="absolute bottom-40 left-20 w-80 h-80 bg-gradient-to-br from-indigo-400/25 to-primary-400/20 rounded-full blur-2xl"
+          animate={{
+            x: [0, -30, 25, 0],
+            y: [0, 40, -25, 0],
+            scale: [1, 0.9, 1.1, 1],
+          }}
+          transition={{
+            duration: 18,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        />
+        
+        {/* More floating elements */}
+        <motion.div 
+          className="absolute top-1/4 right-1/4 w-48 h-48 bg-gradient-to-br from-violet-400/20 to-purple-500/15 rounded-full blur-2xl"
+          animate={{
+            x: [0, 60, -40, 0],
+            y: [0, -30, 50, 0],
+            rotate: [0, 360],
+          }}
+          transition={{
+            duration: 22,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        />
+        <motion.div 
+          className="absolute bottom-1/4 left-1/4 w-56 h-56 bg-gradient-to-br from-sky-400/20 to-cyan-500/15 rounded-full blur-2xl"
+          animate={{
+            x: [0, -50, 35, 0],
+            y: [0, 45, -35, 0],
+            rotate: [0, -360],
+          }}
+          transition={{
+            duration: 20,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        />
+        
+        {/* Mesh gradient overlay with animation */}
+        <motion.div 
+          className="absolute inset-0 bg-gradient-to-br from-transparent via-primary-100/8 to-transparent"
+          animate={{
+            opacity: [0.3, 0.6, 0.3],
+          }}
+          transition={{
+            duration: 8,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        />
+        
+        {/* Enhanced animated grid pattern */}
+        <motion.div 
+          className="absolute inset-0 opacity-40"
+          style={{
+            backgroundImage: `
+              linear-gradient(rgba(37, 99, 235, 0.12) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(37, 99, 235, 0.12) 1px, transparent 1px),
+              radial-gradient(circle at 2px 2px, rgba(59, 130, 246, 0.15) 1px, transparent 0)
+            `,
+            backgroundSize: '60px 60px, 60px 60px, 120px 120px',
+          }}
+          animate={{
+            backgroundPosition: ['0px 0px', '60px 60px', '0px 0px'],
+          }}
+          transition={{
+            duration: 20,
+            repeat: Infinity,
+            ease: "linear"
+          }}
+        />
+        
+        {/* Geometric shapes */}
         <motion.div
-          className="hero-content"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-        >
+          className="absolute top-1/3 right-1/3 w-32 h-32 border-2 border-primary-300/20 rotate-45"
+          animate={{
+            rotate: [45, 225, 45],
+            scale: [1, 1.2, 1],
+          }}
+          transition={{
+            duration: 12,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        />
+        <motion.div
+          className="absolute bottom-1/3 left-1/3 w-24 h-24 border-2 border-blue-300/20 rounded-full"
+          animate={{
+            scale: [1, 1.5, 1],
+            opacity: [0.3, 0.6, 0.3],
+          }}
+          transition={{
+            duration: 10,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        />
+
+        {/* Floating Cameras */}
+        {[
+          { x: '10%', y: '20%', delay: 0, duration: 20 },
+          { x: '85%', y: '15%', delay: 2, duration: 25 },
+          { x: '15%', y: '75%', delay: 4, duration: 22 },
+          { x: '80%', y: '80%', delay: 1, duration: 24 },
+          { x: '50%', y: '10%', delay: 3, duration: 18 },
+          { x: '5%', y: '50%', delay: 5, duration: 26 },
+          { x: '95%', y: '55%', delay: 2.5, duration: 23 },
+          { x: '45%', y: '90%', delay: 1.5, duration: 21 },
+        ].map((camera, index) => (
           <motion.div
-            className="hero-logo"
-            initial={{ opacity: 0, scale: 0.7, y: 30 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            transition={{ delay: 0.2, duration: 1, type: "spring", stiffness: 80 }}
+            key={index}
+            className="absolute"
+            style={{
+              left: camera.x,
+              top: camera.y,
+            }}
+            animate={{
+              y: [0, -30, 30, -20, 20, 0],
+              x: [0, 20, -20, 15, -15, 0],
+              rotate: [0, 5, -5, 3, -3, 0],
+              scale: [1, 1.1, 0.9, 1.05, 0.95, 1],
+            }}
+            transition={{
+              duration: camera.duration,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: camera.delay,
+            }}
           >
-            <motion.div
-              className="logo-glow"
-              animate={{
-                boxShadow: [
-                  "0 0 40px rgba(37, 99, 235, 0.2)",
-                  "0 0 80px rgba(37, 99, 235, 0.3)",
-                  "0 0 40px rgba(37, 99, 235, 0.2)",
-                ],
-              }}
-              transition={{ duration: 5, repeat: Infinity }}
-            >
+            <div className="relative">
+              {/* Camera glow effect */}
               <motion.div
-                className="logo-sparkles"
-                animate={{ rotate: 360 }}
-                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-              >
-                <Sparkles size={24} className="sparkle-1" />
-                <Sparkles size={20} className="sparkle-2" />
-                <Sparkles size={18} className="sparkle-3" />
-              </motion.div>
-              <img src={`${import.meta.env.BASE_URL || '/'}logo.png`} alt="Ain Horus Logo" loading="eager" />
-            </motion.div>
+                className="absolute inset-0 bg-primary-400/20 rounded-full blur-xl"
+                animate={{
+                  scale: [1, 1.3, 1],
+                  opacity: [0.4, 0.7, 0.4],
+                }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+              />
+              {/* Camera icon container */}
+              <div className="relative bg-white/90 backdrop-blur-sm p-3 rounded-2xl shadow-lg border border-primary-200/50">
+                <Camera className="w-6 h-6 text-primary-600" />
+              </div>
+            </div>
           </motion.div>
-          
+        ))}
+
+        {/* Additional smaller floating cameras */}
+        {[
+          { x: '25%', y: '30%', delay: 1, duration: 15 },
+          { x: '70%', y: '25%', delay: 3, duration: 17 },
+          { x: '30%', y: '70%', delay: 2, duration: 19 },
+          { x: '75%', y: '75%', delay: 0.5, duration: 16 },
+        ].map((camera, index) => (
           <motion.div
-            className="hero-text"
+            key={`small-${index}`}
+            className="absolute"
+            style={{
+              left: camera.x,
+              top: camera.y,
+            }}
+            animate={{
+              y: [0, -20, 20, -15, 15, 0],
+              x: [0, 15, -15, 10, -10, 0],
+              rotate: [0, 360],
+              scale: [0.8, 1, 0.8],
+            }}
+            transition={{
+              duration: camera.duration,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: camera.delay,
+            }}
+          >
+            <div className="relative">
+              <motion.div
+                className="absolute inset-0 bg-primary-300/15 rounded-full blur-lg"
+                animate={{
+                  scale: [1, 1.2, 1],
+                  opacity: [0.3, 0.6, 0.3],
+                }}
+                transition={{
+                  duration: 2.5,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+              />
+              <div className="relative bg-white/80 backdrop-blur-sm p-2 rounded-xl shadow-md border border-primary-200/40">
+                <Camera className="w-4 h-4 text-primary-500" />
+              </div>
+            </div>
+          </motion.div>
+        ))}
+      </div>
+
+      <Container size="xl" className="relative z-10 py-20 md:py-32">
+        <div className="text-center">
+          {/* Logo */}
+          <motion.div
+            className="mb-12 flex justify-center"
+            initial={{ opacity: 0, scale: 0.8, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ duration: 0.8, type: "spring" }}
+          >
+            <div className="relative">
+              <div className="absolute inset-0 bg-primary-500/20 blur-2xl rounded-full" />
+              <div className="relative bg-white/80 backdrop-blur-xl p-6 rounded-3xl shadow-2xl border border-primary-200/50">
+                <img 
+                  src={`${import.meta.env.BASE_URL || '/'}logo.png`} 
+                  alt="Ain Horus Logo" 
+                  className="w-64 md:w-80 h-auto"
+                  loading="eager"
+                />
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Headline */}
+          <motion.h1
+            className="text-5xl md:text-6xl lg:text-7xl font-black text-slate-900 mb-6 leading-tight tracking-tight"
             initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2, duration: 0.8 }}
+          >
+            Revolutionizing Public
+            <br />
+            <span className="bg-gradient-to-r from-primary-600 to-primary-800 bg-clip-text text-transparent">
+              Transport Safety
+            </span>
+          </motion.h1>
+
+          {/* Subheadline */}
+          <motion.p
+            className="text-xl md:text-2xl text-slate-600 mb-4 max-w-3xl mx-auto leading-relaxed"
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.8 }}
           >
-            <motion.h1
-              className="hero-title-main"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5, duration: 0.8 }}
-            >
-              Revolutionizing Public Transport Safety
-            </motion.h1>
-            <motion.p
-              className="hero-subtitle"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6, duration: 0.8 }}
-            >
-              Smart Public Transport Safety & Incident Detection System
-            </motion.p>
-            <motion.p
-              className="hero-location"
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.7, duration: 0.6 }}
-            >
-              <span className="location-dot"></span>
-              <span className="location-text">Designed for Egypt</span>
-            </motion.p>
+            Smart Public Transport Safety & Incident Detection System
+          </motion.p>
+
+          {/* Location Badge */}
+          <motion.div
+            className="inline-flex items-center gap-2 px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full border border-slate-200 mb-12 text-slate-700"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.5, duration: 0.6 }}
+          >
+            <div className="w-2 h-2 bg-primary-500 rounded-full animate-pulse" />
+            <span className="text-sm font-medium">Designed for Egypt</span>
           </motion.div>
 
+          {/* CTAs */}
           <motion.div
-            className="hero-features"
-            initial={{ opacity: 0, y: 30 }}
+            className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6, duration: 0.8 }}
+          >
+            <Button variant="primary" size="lg" icon={ArrowRight} iconPosition="right">
+              Get Started
+            </Button>
+            <Button variant="secondary" size="lg" icon={Play} iconPosition="left">
+              Watch Demo
+            </Button>
+          </motion.div>
+
+          {/* Feature Pills */}
+          <motion.div
+            className="flex flex-wrap justify-center gap-3 mb-12"
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8, duration: 0.8 }}
           >
-            {features.map((feature, index) => {
+            {[
+              { icon: Shield, text: 'AI-Powered Safety' },
+              { icon: Zap, text: 'Real-Time Detection' },
+              { icon: MapPin, text: 'GPS Tracking' },
+            ].map((feature, index) => {
               const Icon = feature.icon
               return (
                 <motion.div
                   key={feature.text}
-                  className="feature-badge"
-                  initial={{ opacity: 0, scale: 0.7, y: 20 }}
-                  animate={{ opacity: 1, scale: 1, y: 0 }}
-                  transition={{ delay: 0.9 + index * 0.1, duration: 0.6, type: "spring", stiffness: 200 }}
-                  whileHover={{ scale: 1.08, y: -4, rotate: 1 }}
+                  className="flex items-center gap-2 px-4 py-2 bg-white/90 backdrop-blur-sm rounded-full border border-slate-200 shadow-sm hover:shadow-md transition-all"
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 0.9 + index * 0.1, duration: 0.5 }}
+                  whileHover={{ scale: 1.05, y: -2 }}
                 >
-                  <motion.div
-                    className="feature-icon"
-                    whileHover={{ rotate: 360, scale: 1.1 }}
-                    transition={{ duration: 0.6 }}
-                  >
-                    <Icon size={22} />
-                  </motion.div>
-                  <span className="feature-text">{feature.text}</span>
-                  <div className="feature-glow"></div>
+                  <div className="w-8 h-8 rounded-full bg-primary-100 flex items-center justify-center">
+                    <Icon className="w-4 h-4 text-primary-600" />
+                  </div>
+                  <span className="text-sm font-semibold text-slate-700">{feature.text}</span>
                 </motion.div>
               )
             })}
           </motion.div>
 
-          <motion.div
-            className="hero-scroll-indicator"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1, y: [0, 12, 0] }}
-            transition={{ delay: 1.3, duration: 2, repeat: Infinity, ease: "easeInOut" }}
-          >
-            <div className="scroll-line"></div>
-            <span className="scroll-text">Scroll to explore</span>
-          </motion.div>
-        </motion.div>
-      </div>
+        </div>
+      </Container>
+
+      {/* Scroll Indicator */}
+      <motion.div
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1, y: [0, 10, 0] }}
+        transition={{ delay: 1.5, duration: 2, repeat: Infinity }}
+      >
+        <div className="w-0.5 h-8 bg-gradient-to-b from-primary-600 to-transparent rounded-full" />
+        <span className="text-xs text-slate-500 uppercase tracking-wider">Scroll</span>
+      </motion.div>
     </section>
   )
 }
 
 export default Hero
-

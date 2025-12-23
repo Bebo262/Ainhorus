@@ -1,5 +1,90 @@
 .app {
   position: relative;
   overflow-x: hidden;
+  z-index: 1;
+}
+
+/* Enhanced floating background elements */
+.app::before {
+  content: '';
+  position: fixed;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.15) 0%, rgba(59, 130, 246, 0.08) 40%, transparent 70%);
+  border-radius: 50%;
+  top: -300px;
+  left: -300px;
+  animation: float1 25s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(60px);
+}
+
+.app::after {
+  content: '';
+  position: fixed;
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.12) 0%, rgba(139, 92, 246, 0.06) 40%, transparent 70%);
+  border-radius: 50%;
+  bottom: -350px;
+  right: -350px;
+  animation: float2 30s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(60px);
+}
+
+/* Additional floating shapes */
+@keyframes float1 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1) rotate(0deg);
+  }
+  25% {
+    transform: translate(150px, 120px) scale(1.15) rotate(90deg);
+  }
+  50% {
+    transform: translate(-80px, 200px) scale(0.85) rotate(180deg);
+  }
+  75% {
+    transform: translate(120px, -50px) scale(1.05) rotate(270deg);
+  }
+}
+
+@keyframes float2 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1) rotate(0deg);
+  }
+  25% {
+    transform: translate(-180px, -120px) scale(1.2) rotate(-90deg);
+  }
+  50% {
+    transform: translate(150px, -200px) scale(0.9) rotate(-180deg);
+  }
+  75% {
+    transform: translate(-100px, 80px) scale(1.1) rotate(-270deg);
+  }
+}
+
+/* Particle effect container */
+.app {
+  background-image: 
+    radial-gradient(circle at 25% 25%, rgba(37, 99, 235, 0.1) 0%, transparent 2%),
+    radial-gradient(circle at 75% 75%, rgba(59, 130, 246, 0.08) 0%, transparent 2%),
+    radial-gradient(circle at 50% 50%, rgba(96, 165, 250, 0.06) 0%, transparent 2%),
+    radial-gradient(circle at 10% 90%, rgba(99, 102, 241, 0.08) 0%, transparent 2%),
+    radial-gradient(circle at 90% 10%, rgba(139, 92, 246, 0.06) 0%, transparent 2%);
+  background-size: 200px 200px, 300px 300px, 250px 250px, 180px 180px, 220px 220px;
+  background-position: 0 0, 100px 100px, 200px 200px, 50px 300px, 300px 50px;
+  animation: particleMove 40s linear infinite;
+}
+
+@keyframes particleMove {
+  0% {
+    background-position: 0 0, 100px 100px, 200px 200px, 50px 300px, 300px 50px;
+  }
+  100% {
+    background-position: 400px 400px, 500px 500px, 600px 600px, 450px 700px, 700px 450px;
+  }
 }
 

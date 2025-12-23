@@ -1,69 +1,104 @@
 import { motion } from 'framer-motion'
-import { GraduationCap, Sparkles } from 'lucide-react'
-import './Footer.css'
+import { GraduationCap, Sparkles, Github, Linkedin, Twitter } from 'lucide-react'
+import Container from './ui/Container'
 
 const Footer = () => {
   return (
-    <footer className="footer">
-      <div className="footer-background-decoration"></div>
-      <div className="container">
-        <motion.div
-          className="footer-content"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          <motion.div 
-            className="footer-section"
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
+    <footer className="bg-slate-900 text-white relative overflow-hidden">
+      {/* Background Effects */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-primary-500/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary-500/10 rounded-full blur-3xl" />
+      </div>
+
+      <Container className="relative z-10 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+          {/* Brand */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <div className="flex items-center gap-3 mb-4">
+              <Sparkles className="w-6 h-6 text-primary-400" />
+              <h3 className="text-2xl font-black bg-gradient-to-r from-white to-primary-200 bg-clip-text text-transparent">
+                Ain Horus
+              </h3>
+            </div>
+            <p className="text-slate-400 mb-4 leading-relaxed">
+              Smart Public Transport Safety & Incident Detection System
+            </p>
+            <p className="text-sm text-slate-500 italic">
+              Revolutionizing public transport safety through innovation
+            </p>
+          </motion.div>
+
+          {/* Project Info */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1, duration: 0.6 }}
           >
-            <div className="footer-logo">
-              <Sparkles size={24} />
-              <h3 className="footer-title">Ain Horus</h3>
+            <div className="flex items-center gap-2 mb-4">
+              <GraduationCap className="w-5 h-5 text-primary-400" />
+              <h4 className="font-bold text-lg">Project Information</h4>
             </div>
-            <p className="footer-subtitle">
-              Smart Public Transport Safety & Incident Detection System
-            </p>
-            <div className="footer-tagline">
-              Revolutionizing public transport safety through innovation
-            </div>
+            <ul className="space-y-2 text-slate-400">
+              <li>Graduation Project 2024</li>
+              <li>Department of Business Information Systems</li>
+              <li>AAST - SmartVillage</li>
+            </ul>
           </motion.div>
-          
-          <motion.div 
-            className="footer-section"
+
+          {/* Social Links */}
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2, duration: 0.6 }}
           >
-            <div className="footer-icon-wrapper">
-              <GraduationCap size={20} />
-              <h4 className="footer-heading">Project Information</h4>
+            <h4 className="font-bold text-lg mb-4">Connect</h4>
+            <div className="flex gap-4">
+              {[
+                { icon: Github, label: 'GitHub' },
+                { icon: Linkedin, label: 'LinkedIn' },
+                { icon: Twitter, label: 'Twitter' },
+              ].map((social) => {
+                const Icon = social.icon
+                return (
+                  <motion.a
+                    key={social.label}
+                    href="#"
+                    className="w-10 h-10 rounded-lg bg-slate-800 flex items-center justify-center text-slate-400 hover:text-primary-400 hover:bg-slate-700 transition-colors"
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.95 }}
+                    aria-label={social.label}
+                  >
+                    <Icon className="w-5 h-5" />
+                  </motion.a>
+                )
+              })}
             </div>
-            <p className="footer-text">Graduation Project 2024</p>
-            <p className="footer-text">Department of Business Information Systems</p>
-            <p className="footer-text">AAST - SmartVillage</p>
           </motion.div>
-        </motion.div>
-        
-        <motion.div
-          className="footer-bottom"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.3, duration: 0.6 }}
-        >
-          <p>&copy; {new Date().getFullYear()} Ain Horus. All rights reserved.</p>
-          <div className="footer-accent"></div>
-        </motion.div>
-      </div>
+        </div>
+
+        <div className="border-t border-slate-800 pt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="text-slate-500 text-sm">
+              &copy; {new Date().getFullYear()} Ain Horus. All rights reserved.
+            </p>
+            <div className="flex gap-6 text-sm text-slate-500">
+              <a href="#" className="hover:text-white transition-colors">Privacy</a>
+              <a href="#" className="hover:text-white transition-colors">Terms</a>
+              <a href="#" className="hover:text-white transition-colors">Contact</a>
+            </div>
+          </div>
+        </div>
+      </Container>
     </footer>
   )
 }
 
 export default Footer
-
