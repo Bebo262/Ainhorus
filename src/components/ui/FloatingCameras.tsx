@@ -25,7 +25,7 @@ const FloatingCameras = ({ count = 4, size = 'medium' }: FloatingCamerasProps) =
   }))
 
   return (
-    <div className="absolute inset-0 overflow-hidden pointer-events-none">
+    <div className="absolute inset-0 overflow-hidden pointer-events-none hidden sm:block">
       {cameras.map((camera) => (
         <motion.div
           key={camera.id}

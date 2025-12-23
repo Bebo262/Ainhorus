@@ -122,6 +122,18 @@
     -webkit-tap-highlight-color: transparent;
   }
   
+  /* Reduce background animations on mobile for performance */
+  body::before,
+  body::after {
+    opacity: 0.3;
+  }
+  
+  /* Reduce floating elements visibility on mobile */
+  .app::before,
+  .app::after {
+    opacity: 0.2;
+  }
+  
   /* Reduce motion for users who prefer it */
   @media (prefers-reduced-motion: reduce) {
     *,
@@ -131,6 +143,19 @@
       animation-iteration-count: 1 !important;
       transition-duration: 0.01ms !important;
     }
+  }
+}
+
+/* Extra small mobile devices */
+@media (max-width: 480px) {
+  body::before,
+  body::after {
+    opacity: 0.2;
+  }
+  
+  .app::before,
+  .app::after {
+    display: none;
   }
 }
 

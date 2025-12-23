@@ -22,7 +22,7 @@ const FloatingElements = ({
   }))
 
   return (
-    <div className="absolute inset-0 overflow-hidden pointer-events-none">
+    <div className="absolute inset-0 overflow-hidden pointer-events-none hidden sm:block">
       {elements.map((element) => (
         <motion.div
           key={element.id}

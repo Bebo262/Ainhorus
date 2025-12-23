@@ -98,7 +98,7 @@ const Problem = () => {
         />
 
         {/* Enhanced Problem Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-8 sm:mb-12">
           {problems.map((problem, index) => {
             const Icon = problem.icon
             return (
@@ -110,20 +110,20 @@ const Problem = () => {
                 transition={{ delay: index * 0.1, duration: 0.6 }}
               >
                 <Card className={`h-full border-2 ${problem.borderColor} hover:shadow-2xl transition-all duration-300`}>
-                  <div className="flex items-start justify-between mb-6">
-                    <div className={`w-16 h-16 ${problem.bgColor} rounded-2xl flex items-center justify-center border-2 ${problem.borderColor}`}>
-                      <Icon className={`w-8 h-8 ${problem.color}`} />
+                  <div className="flex items-start justify-between mb-4 sm:mb-6 gap-3">
+                    <div className={`w-14 h-14 sm:w-16 sm:h-16 ${problem.bgColor} rounded-xl sm:rounded-2xl flex items-center justify-center border-2 ${problem.borderColor} flex-shrink-0`}>
+                      <Icon className={`w-7 h-7 sm:w-8 sm:h-8 ${problem.color}`} />
                     </div>
-                    <div className="text-right">
-                      <div className="text-3xl font-black text-slate-900">{problem.stat}</div>
+                    <div className="text-right flex-shrink-0">
+                      <div className="text-2xl sm:text-3xl font-black text-slate-900">{problem.stat}</div>
                       <div className="text-xs font-semibold text-slate-500 uppercase tracking-wider">{problem.statLabel}</div>
                     </div>
                   </div>
-                  <h3 className="text-xl font-bold text-slate-900 mb-3">{problem.title}</h3>
-                  <p className="text-slate-600 leading-relaxed">{problem.description}</p>
-                  <div className="mt-4 pt-4 border-t border-slate-200">
-                    <div className="flex items-center gap-2 text-sm text-slate-500">
-                      <TrendingDown className="w-4 h-4 text-red-500" />
+                  <h3 className="text-lg sm:text-xl font-bold text-slate-900 mb-2 sm:mb-3">{problem.title}</h3>
+                  <p className="text-sm sm:text-base text-slate-600 leading-relaxed">{problem.description}</p>
+                  <div className="mt-3 sm:mt-4 pt-3 sm:pt-4 border-t border-slate-200">
+                    <div className="flex items-center gap-2 text-xs sm:text-sm text-slate-500">
+                      <TrendingDown className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-red-500" />
                       <span className="font-medium">Critical Issue</span>
                     </div>
                   </div>
@@ -135,24 +135,24 @@ const Problem = () => {
 
         {/* Impact Summary */}
         <motion.div
-          className="bg-gradient-to-br from-red-50 via-orange-50 to-amber-50 rounded-3xl p-8 md:p-12 border-2 border-red-200/50"
+          className="bg-gradient-to-br from-red-50 via-orange-50 to-amber-50 rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-12 border-2 border-red-200/50"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 text-center">
             <div>
-              <div className="text-4xl font-black text-red-600 mb-2">2.5M+</div>
-              <div className="text-sm font-semibold text-slate-700 uppercase tracking-wider">Daily Passengers Affected</div>
+              <div className="text-3xl sm:text-4xl font-black text-red-600 mb-2">2.5M+</div>
+              <div className="text-xs sm:text-sm font-semibold text-slate-700 uppercase tracking-wider px-2">Daily Passengers Affected</div>
             </div>
             <div>
-              <div className="text-4xl font-black text-orange-600 mb-2">500+</div>
-              <div className="text-sm font-semibold text-slate-700 uppercase tracking-wider">Incidents Per Month</div>
+              <div className="text-3xl sm:text-4xl font-black text-orange-600 mb-2">500+</div>
+              <div className="text-xs sm:text-sm font-semibold text-slate-700 uppercase tracking-wider px-2">Incidents Per Month</div>
             </div>
             <div>
-              <div className="text-4xl font-black text-amber-600 mb-2">$50M+</div>
-              <div className="text-sm font-semibold text-slate-700 uppercase tracking-wider">Annual Economic Impact</div>
+              <div className="text-3xl sm:text-4xl font-black text-amber-600 mb-2">$50M+</div>
+              <div className="text-xs sm:text-sm font-semibold text-slate-700 uppercase tracking-wider px-2">Annual Economic Impact</div>
             </div>
           </div>
         </motion.div>

@@ -12,7 +12,7 @@ const Card = ({ children, className = '', hover = true, glow = false }: CardProp
   return (
     <motion.div
       className={`
-        relative bg-white/80 backdrop-blur-xl rounded-3xl p-8
+        relative bg-white/80 backdrop-blur-xl rounded-2xl sm:rounded-3xl p-5 sm:p-6 md:p-8
         border border-slate-200/60
         shadow-lg shadow-slate-200/50
         ${glow ? 'shadow-primary-500/20' : ''}

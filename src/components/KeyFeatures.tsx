@@ -129,7 +129,7 @@ const KeyFeatures = () => {
           description="Comprehensive capabilities designed for modern public transport safety"
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {features.map((feature, index) => {
             const Icon = feature.icon
             return (
@@ -146,9 +146,9 @@ const KeyFeatures = () => {
                   <div className={`absolute inset-0 bg-gradient-to-br ${feature.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-300`} />
                   
                   {/* Animated Icon Container */}
-                  <div className="relative mb-6">
+                  <div className="relative mb-4 sm:mb-6">
                     <motion.div
-                      className={`w-20 h-20 ${feature.bgColor} rounded-2xl flex items-center justify-center mb-4 relative overflow-hidden border-2 ${feature.borderColor}`}
+                      className={`w-16 h-16 sm:w-20 sm:h-20 ${feature.bgColor} rounded-xl sm:rounded-2xl flex items-center justify-center mb-3 sm:mb-4 relative overflow-hidden border-2 ${feature.borderColor}`}
                       whileHover={{ scale: 1.1, rotate: 5 }}
                       transition={{ type: "spring", stiffness: 300 }}
                     >
@@ -165,11 +165,11 @@ const KeyFeatures = () => {
                           ease: "easeInOut"
                         }}
                       />
-                      <Icon className={`w-10 h-10 ${feature.color} relative z-10`} />
+                      <Icon className={`w-8 h-8 sm:w-10 sm:h-10 ${feature.color} relative z-10`} />
                       
-                      {/* Sparkle Effect */}
+                      {/* Sparkle Effect - Hidden on mobile */}
                       <motion.div
-                        className="absolute top-1 right-1"
+                        className="absolute top-1 right-1 hidden sm:block"
                         animate={{
                           rotate: [0, 360],
                           scale: [0.8, 1, 0.8],
@@ -185,35 +185,35 @@ const KeyFeatures = () => {
                     </motion.div>
                     
                     {/* Badge */}
-                    <div className={`inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-bold ${feature.bgColor} ${feature.color} border ${feature.borderColor}`}>
+                    <div className={`inline-flex items-center gap-1 px-2 sm:px-3 py-0.5 sm:py-1 rounded-full text-xs font-bold ${feature.bgColor} ${feature.color} border ${feature.borderColor}`}>
                       <Zap className="w-3 h-3" />
                       <span>{feature.badge}</span>
                     </div>
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-primary-700 transition-colors">
+                  <h3 className="text-lg sm:text-xl font-bold text-slate-900 mb-2 sm:mb-3 group-hover:text-primary-700 transition-colors">
                     {feature.title}
                   </h3>
                   
                   {/* Description */}
-                  <p className="text-slate-600 leading-relaxed mb-4">
+                  <p className="text-sm sm:text-base text-slate-600 leading-relaxed mb-3 sm:mb-4">
                     {feature.description}
                   </p>
 
                   {/* Highlights */}
-                  <div className="space-y-2 pt-4 border-t border-slate-200">
+                  <div className="space-y-1.5 sm:space-y-2 pt-3 sm:pt-4 border-t border-slate-200">
                     {feature.highlights.map((highlight, idx) => (
                       <motion.div
                         key={highlight}
-                        className="flex items-center gap-2 text-sm text-slate-700"
+                        className="flex items-center gap-2 text-xs sm:text-sm text-slate-700"
                         initial={{ opacity: 0, x: -10 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: index * 0.1 + idx * 0.05 }}
                       >
                         <motion.div
-                          className={`w-1.5 h-1.5 rounded-full ${feature.bgColor} ${feature.color.replace('text-', 'bg-')}`}
+                          className={`w-1.5 h-1.5 rounded-full ${feature.bgColor} ${feature.color.replace('text-', 'bg-')} flex-shrink-0`}
                           animate={{
                             scale: [1, 1.3, 1],
                           }}
@@ -230,7 +230,7 @@ const KeyFeatures = () => {
 
                   {/* Bottom Accent Line */}
                   <motion.div
-                    className={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r ${feature.gradient} transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300`}
+                    className={`absolute bottom-0 left-0 right-0 h-0.5 sm:h-1 bg-gradient-to-r ${feature.gradient} transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300`}
                   />
                 </Card>
               </motion.div>
@@ -240,7 +240,7 @@ const KeyFeatures = () => {
 
         {/* Feature Summary Banner */}
         <motion.div
-          className="mt-16 bg-gradient-to-r from-primary-600 via-blue-600 to-indigo-600 rounded-3xl p-8 md:p-12 text-white relative overflow-hidden"
+          className="mt-12 sm:mt-16 bg-gradient-to-r from-primary-600 via-blue-600 to-indigo-600 rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-12 text-white relative overflow-hidden"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -255,17 +255,17 @@ const KeyFeatures = () => {
           </div>
 
           <div className="relative z-10">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center">
-                <CheckCircle className="w-8 h-8 text-white" />
+            <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 sm:gap-3 mb-6">
+              <div className="w-14 h-14 sm:w-16 sm:h-16 bg-white/20 backdrop-blur-sm rounded-xl sm:rounded-2xl flex items-center justify-center flex-shrink-0">
+                <CheckCircle className="w-7 h-7 sm:w-8 sm:h-8 text-white" />
               </div>
-              <div>
-                <h3 className="text-3xl font-black mb-2">All Features Integrated</h3>
-                <p className="text-white/90 text-lg">One comprehensive platform for complete transport safety management</p>
+              <div className="text-center sm:text-left">
+                <h3 className="text-2xl sm:text-3xl font-black mb-2">All Features Integrated</h3>
+                <p className="text-white/90 text-base sm:text-lg px-4 sm:px-0">One comprehensive platform for complete transport safety management</p>
               </div>
             </div>
             
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
               {[
                 { icon: Users, label: 'Multi-User Support', value: '3 User Types' },
                 { icon: Shield, label: 'Security Level', value: 'Enterprise' },
@@ -275,16 +275,16 @@ const KeyFeatures = () => {
                 return (
                   <motion.div
                     key={item.label}
-                    className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20"
+                    className="bg-white/10 backdrop-blur-sm rounded-xl p-3 sm:p-4 border border-white/20"
                     initial={{ opacity: 0, scale: 0.9 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.2 + idx * 0.1 }}
                     whileHover={{ scale: 1.05, backgroundColor: 'rgba(255, 255, 255, 0.15)' }}
                   >
-                    <ItemIcon className="w-6 h-6 mb-2" />
-                    <div className="text-2xl font-black mb-1">{item.value}</div>
-                    <div className="text-sm text-white/80">{item.label}</div>
+                    <ItemIcon className="w-5 h-5 sm:w-6 sm:h-6 mb-2" />
+                    <div className="text-xl sm:text-2xl font-black mb-1">{item.value}</div>
+                    <div className="text-xs sm:text-sm text-white/80">{item.label}</div>
                   </motion.div>
                 )
               })}

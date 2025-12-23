@@ -161,7 +161,7 @@ const CompetitorSnapshot = () => {
         />
 
         {/* Enhanced Score Cards with Feature Counts */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-8 sm:mb-12">
           {[
             { 
               name: 'Ain Horus', 
@@ -237,47 +237,47 @@ const CompetitorSnapshot = () => {
 
         {/* Compact Analysis: Why Ain Horus Wins */}
         <motion.div
-          className="bg-gradient-to-br from-primary-50 via-blue-50 to-indigo-50 rounded-3xl p-8 md:p-10 mb-12 border-2 border-primary-200/50 shadow-lg"
+          className="bg-gradient-to-br from-primary-50 via-blue-50 to-indigo-50 rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 mb-8 sm:mb-12 border-2 border-primary-200/50 shadow-lg"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <div className="flex items-center gap-3 mb-6">
-            <div className="w-12 h-12 bg-primary-600 rounded-xl flex items-center justify-center">
+          <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 sm:gap-3 mb-6">
+            <div className="w-12 h-12 bg-primary-600 rounded-xl flex items-center justify-center flex-shrink-0">
               <Award className="w-6 h-6 text-white" />
             </div>
-            <div>
-              <h3 className="text-2xl font-black text-slate-900">Ain Horus: The Complete Solution</h3>
-              <p className="text-sm text-slate-600">12/12 features • 100% coverage • All-in-one platform</p>
+            <div className="text-center sm:text-left">
+              <h3 className="text-xl sm:text-2xl font-black text-slate-900 mb-1">Ain Horus: The Complete Solution</h3>
+              <p className="text-xs sm:text-sm text-slate-600">12/12 features • 100% coverage • All-in-one platform</p>
             </div>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="bg-white/80 backdrop-blur-sm rounded-xl p-5 border border-primary-200/30">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
+            <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4 sm:p-5 border border-primary-200/30">
               <div className="flex items-center gap-2 mb-3">
-                <Target className="w-5 h-5 text-primary-600" />
-                <span className="font-bold text-slate-900 text-sm">Unique Features</span>
+                <Target className="w-4 h-4 sm:w-5 sm:h-5 text-primary-600" />
+                <span className="font-bold text-slate-900 text-xs sm:text-sm">Unique Features</span>
               </div>
-              <div className="text-3xl font-black text-primary-600 mb-1">{uniqueAdvantages.length}</div>
+              <div className="text-2xl sm:text-3xl font-black text-primary-600 mb-1">{uniqueAdvantages.length}</div>
               <div className="text-xs text-slate-600">Exclusive to Ain Horus</div>
             </div>
             
-            <div className="bg-white/80 backdrop-blur-sm rounded-xl p-5 border border-primary-200/30">
+            <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4 sm:p-5 border border-primary-200/30">
               <div className="flex items-center gap-2 mb-3">
-                <Zap className="w-5 h-5 text-blue-600" />
-                <span className="font-bold text-slate-900 text-sm">Feature Advantage</span>
+                <Zap className="w-4 h-4 sm:w-5 sm:h-5 text-blue-600" />
+                <span className="font-bold text-slate-900 text-xs sm:text-sm">Feature Advantage</span>
               </div>
-              <div className="text-3xl font-black text-blue-600 mb-1">+{ainHorusFeatures - Math.max(gpsOnlyFeatures, cctvOnlyFeatures, ticketingOnlyFeatures)}</div>
+              <div className="text-2xl sm:text-3xl font-black text-blue-600 mb-1">+{ainHorusFeatures - Math.max(gpsOnlyFeatures, cctvOnlyFeatures, ticketingOnlyFeatures)}</div>
               <div className="text-xs text-slate-600">More than competitors</div>
             </div>
             
-            <div className="bg-white/80 backdrop-blur-sm rounded-xl p-5 border border-primary-200/30">
+            <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4 sm:p-5 border border-primary-200/30">
               <div className="flex items-center gap-2 mb-3">
-                <Star className="w-5 h-5 text-amber-600" />
-                <span className="font-bold text-slate-900 text-sm">Coverage Score</span>
+                <Star className="w-4 h-4 sm:w-5 sm:h-5 text-amber-600" />
+                <span className="font-bold text-slate-900 text-xs sm:text-sm">Coverage Score</span>
               </div>
-              <div className="text-3xl font-black text-amber-600 mb-1">{ainHorusScore}%</div>
+              <div className="text-2xl sm:text-3xl font-black text-amber-600 mb-1">{ainHorusScore}%</div>
               <div className="text-xs text-slate-600">vs {Math.max(gpsOnlyScore, cctvOnlyScore, ticketingOnlyScore)}% best competitor</div>
             </div>
           </div>
@@ -285,9 +285,9 @@ const CompetitorSnapshot = () => {
 
         {/* Compact Feature Comparison - Visual Badge Style */}
         <div className="space-y-4">
-          <div className="flex items-center justify-between mb-6">
-            <h3 className="text-xl font-black text-slate-900">Feature Comparison</h3>
-            <div className="flex items-center gap-4 text-xs">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-6">
+            <h3 className="text-lg sm:text-xl font-black text-slate-900">Feature Comparison</h3>
+            <div className="flex items-center gap-3 sm:gap-4 text-xs flex-wrap">
               <div className="flex items-center gap-1">
                 <div className="w-3 h-3 bg-primary-600 rounded-full"></div>
                 <span className="font-semibold text-primary-600">Ain Horus</span>
@@ -299,7 +299,7 @@ const CompetitorSnapshot = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
             {comparisonData.map((feature) => {
               const isExclusive = feature.ainHorus && !feature.gpsOnly && !feature.cctvOnly && !feature.ticketingOnly
               const othersCount = [feature.gpsOnly, feature.cctvOnly, feature.ticketingOnly].filter(Boolean).length
@@ -319,8 +319,8 @@ const CompetitorSnapshot = () => {
                       : 'bg-slate-50 border-slate-200'
                   }`}
                 >
-                  <div className="flex items-start justify-between mb-2">
-                    <span className="text-sm font-bold text-slate-900 flex-1 pr-2">{feature.feature}</span>
+                  <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 mb-2">
+                    <span className="text-xs sm:text-sm font-bold text-slate-900 flex-1 pr-2">{feature.feature}</span>
                     {isExclusive && (
                       <span className="text-xs font-bold text-primary-600 bg-primary-100 px-2 py-0.5 rounded-full whitespace-nowrap">
                         EXCLUSIVE

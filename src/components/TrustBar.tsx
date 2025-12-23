@@ -22,11 +22,11 @@ const TrustBar = () => {
           <p className="text-sm font-semibold text-slate-500 uppercase tracking-wider">
             Trusted By
           </p>
-          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12 opacity-60">
+          <div className="flex flex-wrap justify-center items-center gap-4 sm:gap-6 md:gap-8 lg:gap-12 opacity-60 px-4">
             {partners.map((partner, index) => (
               <motion.div
                 key={partner}
-                className="text-lg font-bold text-slate-700"
+                className="text-sm sm:text-base md:text-lg font-bold text-slate-700"
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 0.6, y: 0 }}
                 viewport={{ once: true }}

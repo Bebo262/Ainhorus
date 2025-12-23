@@ -90,21 +90,21 @@ const FAQ = () => {
           description="Everything you need to know about Ain Horus"
         />
 
-        <div className="max-w-3xl mx-auto space-y-4">
+        <div className="max-w-3xl mx-auto space-y-3 sm:space-y-4">
           {faqs.map((faq, index) => (
             <motion.div
               key={index}
-              className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition-shadow"
+              className="bg-white rounded-xl sm:rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition-shadow"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
             >
               <button
-                className="w-full px-6 py-5 text-left flex items-center justify-between gap-4 focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-2xl"
+                className="w-full px-4 sm:px-6 py-4 sm:py-5 text-left flex items-center justify-between gap-3 sm:gap-4 focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-xl sm:rounded-2xl"
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
               >
-                <span className="font-bold text-slate-900 text-lg">{faq.question}</span>
+                <span className="font-bold text-slate-900 text-base sm:text-lg pr-2">{faq.question}</span>
                 <ChevronDown
                   className={`w-5 h-5 text-slate-500 flex-shrink-0 transition-transform ${
                     openIndex === index ? 'rotate-180' : ''
@@ -120,7 +120,7 @@ const FAQ = () => {
                     transition={{ duration: 0.3 }}
                     className="overflow-hidden"
                   >
-                    <div className="px-6 pb-5 text-slate-600 leading-relaxed">{faq.answer}</div>
+                    <div className="px-4 sm:px-6 pb-4 sm:pb-5 text-sm sm:text-base text-slate-600 leading-relaxed">{faq.answer}</div>
                   </motion.div>
                 )}
               </AnimatePresence>

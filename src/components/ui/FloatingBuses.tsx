@@ -25,7 +25,7 @@ const FloatingBuses = ({ count = 3, size = 'medium' }: FloatingBusesProps) => {
   }))
 
   return (
-    <div className="absolute inset-0 overflow-hidden pointer-events-none">
+    <div className="absolute inset-0 overflow-hidden pointer-events-none hidden sm:block">
       {buses.map((bus) => (
         <motion.div
           key={bus.id}

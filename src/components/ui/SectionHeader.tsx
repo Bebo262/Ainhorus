@@ -28,14 +28,14 @@ const SectionHeader = ({ badge, title, description, children }: SectionHeaderPro
           {badge}
         </motion.span>
       )}
-      <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-slate-900 mb-6 leading-tight tracking-tight">
-        {title}
-      </h2>
-      {description && (
-        <p className="text-lg md:text-xl text-slate-600 leading-relaxed max-w-2xl mx-auto">
-          {description}
-        </p>
-      )}
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-slate-900 mb-4 sm:mb-6 leading-tight tracking-tight px-2">
+            {title}
+          </h2>
+          {description && (
+            <p className="text-base sm:text-lg md:text-xl text-slate-600 leading-relaxed max-w-2xl mx-auto px-4">
+              {description}
+            </p>
+          )}
       {children}
     </motion.div>
   )

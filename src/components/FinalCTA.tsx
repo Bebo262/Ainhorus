@@ -70,18 +70,18 @@ const FinalCTA = () => {
             </span>
           </motion.div>
 
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 leading-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black text-white mb-4 sm:mb-6 leading-tight px-4">
             Start Your Journey with
             <br />
             <span className="text-primary-200">Ain Horus Today</span>
           </h2>
 
-          <p className="text-xl text-white/90 mb-10 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl text-white/90 mb-8 sm:mb-10 max-w-2xl mx-auto leading-relaxed px-4">
             Join the revolution in public transport safety. Get started with our comprehensive
             incident detection and response system.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center px-4 w-full sm:w-auto">
             <Button
               variant="secondary"
               size="lg"

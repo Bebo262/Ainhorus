@@ -12,7 +12,7 @@ const Footer = () => {
       </div>
 
       <Container className="relative z-10 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 sm:gap-10 md:gap-12 mb-8 sm:mb-12">
           {/* Brand */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -22,14 +22,14 @@ const Footer = () => {
           >
             <div className="flex items-center gap-3 mb-4">
               <Sparkles className="w-6 h-6 text-primary-400" />
-              <h3 className="text-2xl font-black bg-gradient-to-r from-white to-primary-200 bg-clip-text text-transparent">
+              <h3 className="text-xl sm:text-2xl font-black bg-gradient-to-r from-white to-primary-200 bg-clip-text text-transparent">
                 Ain Horus
               </h3>
             </div>
-            <p className="text-slate-400 mb-4 leading-relaxed">
+            <p className="text-sm sm:text-base text-slate-400 mb-3 sm:mb-4 leading-relaxed">
               Smart Public Transport Safety & Incident Detection System
             </p>
-            <p className="text-sm text-slate-500 italic">
+            <p className="text-xs sm:text-sm text-slate-500 italic">
               Revolutionizing public transport safety through innovation
             </p>
           </motion.div>
@@ -45,7 +45,7 @@ const Footer = () => {
               <GraduationCap className="w-5 h-5 text-primary-400" />
               <h4 className="font-bold text-lg">Project Information</h4>
             </div>
-            <ul className="space-y-2 text-slate-400">
+            <ul className="space-y-2 text-sm sm:text-base text-slate-400">
               <li>Graduation Project 2024</li>
               <li>Department of Business Information Systems</li>
               <li>AAST - SmartVillage</li>
@@ -91,7 +91,7 @@ const Footer = () => {
             <p className="text-slate-500 text-sm">
               &copy; {new Date().getFullYear()} Ain Horus. All rights reserved.
             </p>
-            <div className="flex gap-6 text-sm text-slate-500">
+            <div className="flex flex-wrap justify-center sm:justify-end gap-4 sm:gap-6 text-xs sm:text-sm text-slate-500">
               <a href="#" className="hover:text-white transition-colors">Privacy</a>
               <a href="#" className="hover:text-white transition-colors">Terms</a>
               <a href="#" className="hover:text-white transition-colors">Contact</a>

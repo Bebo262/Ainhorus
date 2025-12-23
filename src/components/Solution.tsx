@@ -98,7 +98,7 @@ const Solution = () => {
         />
 
         {/* Enhanced Solution Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-8 sm:mb-12">
           {components.map((component, index) => {
             const Icon = component.icon
             return (
@@ -110,23 +110,24 @@ const Solution = () => {
                 transition={{ delay: index * 0.1, duration: 0.6 }}
               >
                 <Card glow className="h-full border-primary-200/50 hover:border-primary-300/50 transition-all duration-300">
-                  <div className="flex items-center justify-between mb-6">
-                    <div className={`w-16 h-16 ${component.bgColor} rounded-2xl flex items-center justify-center border-2 border-primary-200/50`}>
-                      <Icon className={`w-8 h-8 ${component.color}`} />
+                  <div className="flex items-center justify-between mb-4 sm:mb-6 gap-3">
+                    <div className={`w-14 h-14 sm:w-16 sm:h-16 ${component.bgColor} rounded-xl sm:rounded-2xl flex items-center justify-center border-2 border-primary-200/50 flex-shrink-0`}>
+                      <Icon className={`w-7 h-7 sm:w-8 sm:h-8 ${component.color}`} />
                     </div>
                     <motion.div
                       animate={{ rotate: [0, 10, -10, 0] }}
                       transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                      className="flex-shrink-0"
                     >
-                      <Zap className="w-6 h-6 text-primary-500" />
+                      <Zap className="w-5 h-5 sm:w-6 sm:h-6 text-primary-500" />
                     </motion.div>
                   </div>
-                  <h3 className="text-xl font-bold text-slate-900 mb-3">{component.title}</h3>
-                  <p className="text-slate-600 leading-relaxed mb-4">{component.description}</p>
-                  <div className="space-y-2 pt-4 border-t border-slate-200">
+                  <h3 className="text-lg sm:text-xl font-bold text-slate-900 mb-2 sm:mb-3">{component.title}</h3>
+                  <p className="text-sm sm:text-base text-slate-600 leading-relaxed mb-3 sm:mb-4">{component.description}</p>
+                  <div className="space-y-1.5 sm:space-y-2 pt-3 sm:pt-4 border-t border-slate-200">
                     {component.features.map((feature, idx) => (
-                      <div key={idx} className="flex items-center gap-2 text-sm text-slate-700">
-                        <CheckCircle className="w-4 h-4 text-primary-600 flex-shrink-0" />
+                      <div key={idx} className="flex items-center gap-2 text-xs sm:text-sm text-slate-700">
+                        <CheckCircle className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-primary-600 flex-shrink-0" />
                         <span>{feature}</span>
                       </div>
                     ))}
@@ -139,39 +140,39 @@ const Solution = () => {
 
         {/* Solution Benefits */}
         <motion.div
-          className="bg-gradient-to-br from-primary-50 via-blue-50 to-indigo-50 rounded-3xl p-8 md:p-12 border-2 border-primary-200/50"
+          className="bg-gradient-to-br from-primary-50 via-blue-50 to-indigo-50 rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-12 border-2 border-primary-200/50"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <div className="text-center mb-8">
-            <h3 className="text-3xl font-black text-slate-900 mb-4">Key Benefits</h3>
-            <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+          <div className="text-center mb-6 sm:mb-8">
+            <h3 className="text-2xl sm:text-3xl font-black text-slate-900 mb-3 sm:mb-4 px-4">Key Benefits</h3>
+            <p className="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto px-4">
               Our integrated solution delivers measurable improvements across all aspects of public transport safety
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8">
             <div className="text-center">
-              <div className="w-16 h-16 bg-primary-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <Shield className="w-8 h-8 text-primary-600" />
+              <div className="w-14 h-14 sm:w-16 sm:h-16 bg-primary-100 rounded-xl sm:rounded-2xl flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                <Shield className="w-7 h-7 sm:w-8 sm:h-8 text-primary-600" />
               </div>
-              <div className="text-3xl font-black text-primary-600 mb-2">95%</div>
-              <div className="text-sm font-semibold text-slate-700 uppercase tracking-wider">Safety Improvement</div>
+              <div className="text-2xl sm:text-3xl font-black text-primary-600 mb-2">95%</div>
+              <div className="text-xs sm:text-sm font-semibold text-slate-700 uppercase tracking-wider px-2">Safety Improvement</div>
             </div>
             <div className="text-center">
-              <div className="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <Zap className="w-8 h-8 text-blue-600" />
+              <div className="w-14 h-14 sm:w-16 sm:h-16 bg-blue-100 rounded-xl sm:rounded-2xl flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                <Zap className="w-7 h-7 sm:w-8 sm:h-8 text-blue-600" />
               </div>
-              <div className="text-3xl font-black text-blue-600 mb-2">&lt;2 min</div>
-              <div className="text-sm font-semibold text-slate-700 uppercase tracking-wider">Response Time</div>
+              <div className="text-2xl sm:text-3xl font-black text-blue-600 mb-2">&lt;2 min</div>
+              <div className="text-xs sm:text-sm font-semibold text-slate-700 uppercase tracking-wider px-2">Response Time</div>
             </div>
             <div className="text-center">
-              <div className="w-16 h-16 bg-indigo-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <CheckCircle className="w-8 h-8 text-indigo-600" />
+              <div className="w-14 h-14 sm:w-16 sm:h-16 bg-indigo-100 rounded-xl sm:rounded-2xl flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                <CheckCircle className="w-7 h-7 sm:w-8 sm:h-8 text-indigo-600" />
               </div>
-              <div className="text-3xl font-black text-indigo-600 mb-2">99.9%</div>
-              <div className="text-sm font-semibold text-slate-700 uppercase tracking-wider">System Uptime</div>
+              <div className="text-2xl sm:text-3xl font-black text-indigo-600 mb-2">99.9%</div>
+              <div className="text-xs sm:text-sm font-semibold text-slate-700 uppercase tracking-wider px-2">System Uptime</div>
             </div>
           </div>
         </motion.div>

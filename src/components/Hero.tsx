@@ -10,7 +10,7 @@ const Hero = () => {
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {/* Large gradient orbs with enhanced animations */}
         <motion.div 
-          className="absolute top-20 left-10 w-96 h-96 bg-gradient-to-br from-primary-400/35 to-primary-600/25 rounded-full blur-3xl"
+          className="absolute top-20 left-10 w-64 h-64 md:w-96 md:h-96 bg-gradient-to-br from-primary-400/35 to-primary-600/25 rounded-full blur-3xl hidden sm:block"
           animate={{
             scale: [1, 1.2, 1],
             x: [0, 50, 0],
@@ -23,7 +23,7 @@ const Hero = () => {
           }}
         />
         <motion.div 
-          className="absolute bottom-20 right-10 w-[500px] h-[500px] bg-gradient-to-br from-blue-400/30 to-primary-500/20 rounded-full blur-3xl"
+          className="absolute bottom-20 right-10 w-[300px] h-[300px] md:w-[500px] md:h-[500px] bg-gradient-to-br from-blue-400/30 to-primary-500/20 rounded-full blur-3xl hidden sm:block"
           animate={{
             scale: [1, 1.15, 1],
             x: [0, -40, 0],
@@ -37,7 +37,7 @@ const Hero = () => {
           }}
         />
         <motion.div 
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-gradient-to-br from-primary-300/25 to-blue-200/15 rounded-full blur-3xl"
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] md:w-[700px] md:h-[700px] bg-gradient-to-br from-primary-300/25 to-blue-200/15 rounded-full blur-3xl opacity-50 md:opacity-100"
           animate={{
             scale: [1, 1.3, 1],
             rotate: [0, 180, 360],
@@ -165,7 +165,7 @@ const Hero = () => {
           }}
         />
 
-        {/* Floating Cameras */}
+          {/* Floating Cameras - Hidden on mobile */}
         {[
           { x: '10%', y: '20%', delay: 0, duration: 20 },
           { x: '85%', y: '15%', delay: 2, duration: 25 },
@@ -178,7 +178,7 @@ const Hero = () => {
         ].map((camera, index) => (
           <motion.div
             key={index}
-            className="absolute"
+            className="absolute hidden sm:block"
             style={{
               left: camera.x,
               top: camera.y,
@@ -218,7 +218,7 @@ const Hero = () => {
           </motion.div>
         ))}
 
-        {/* Additional smaller floating cameras */}
+        {/* Additional smaller floating cameras - Hidden on mobile */}
         {[
           { x: '25%', y: '30%', delay: 1, duration: 15 },
           { x: '70%', y: '25%', delay: 3, duration: 17 },
@@ -227,7 +227,7 @@ const Hero = () => {
         ].map((camera, index) => (
           <motion.div
             key={`small-${index}`}
-            className="absolute"
+            className="absolute hidden md:block"
             style={{
               left: camera.x,
               top: camera.y,
@@ -277,11 +277,11 @@ const Hero = () => {
           >
             <div className="relative">
               <div className="absolute inset-0 bg-primary-500/20 blur-2xl rounded-full" />
-              <div className="relative bg-white/80 backdrop-blur-xl p-6 rounded-3xl shadow-2xl border border-primary-200/50">
+              <div className="relative bg-white/80 backdrop-blur-xl p-4 sm:p-6 rounded-2xl sm:rounded-3xl shadow-2xl border border-primary-200/50">
                 <img 
                   src={`${import.meta.env.BASE_URL || '/'}logo.png`} 
                   alt="Ain Horus Logo" 
-                  className="w-64 md:w-80 h-auto"
+                  className="w-48 sm:w-56 md:w-64 lg:w-80 h-auto"
                   loading="eager"
                 />
               </div>
@@ -290,7 +290,7 @@ const Hero = () => {
 
           {/* Headline */}
           <motion.h1
-            className="text-5xl md:text-6xl lg:text-7xl font-black text-slate-900 mb-6 leading-tight tracking-tight"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-slate-900 mb-4 sm:mb-6 leading-tight tracking-tight px-4"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.8 }}
@@ -304,7 +304,7 @@ const Hero = () => {
 
           {/* Subheadline */}
           <motion.p
-            className="text-xl md:text-2xl text-slate-600 mb-4 max-w-3xl mx-auto leading-relaxed"
+            className="text-base sm:text-lg md:text-xl lg:text-2xl text-slate-600 mb-4 max-w-3xl mx-auto leading-relaxed px-4"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.8 }}
@@ -325,7 +325,7 @@ const Hero = () => {
 
           {/* CTAs */}
           <motion.div
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16"
+            className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mb-12 sm:mb-16 px-4 w-full sm:w-auto"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.8 }}
@@ -340,7 +340,7 @@ const Hero = () => {
 
           {/* Feature Pills */}
           <motion.div
-            className="flex flex-wrap justify-center gap-3 mb-12"
+            className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-8 sm:mb-12 px-4"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8, duration: 0.8 }}
@@ -360,10 +360,10 @@ const Hero = () => {
                   transition={{ delay: 0.9 + index * 0.1, duration: 0.5 }}
                   whileHover={{ scale: 1.05, y: -2 }}
                 >
-                  <div className="w-8 h-8 rounded-full bg-primary-100 flex items-center justify-center">
-                    <Icon className="w-4 h-4 text-primary-600" />
+                  <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-primary-100 flex items-center justify-center">
+                    <Icon className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-primary-600" />
                   </div>
-                  <span className="text-sm font-semibold text-slate-700">{feature.text}</span>
+                  <span className="text-xs sm:text-sm font-semibold text-slate-700">{feature.text}</span>
                 </motion.div>
               )
             })}

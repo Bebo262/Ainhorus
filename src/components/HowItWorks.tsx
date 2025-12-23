@@ -81,7 +81,7 @@ const HowItWorks = () => {
           {/* Connection Line */}
           <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-primary-200 via-primary-300 to-primary-200 transform -translate-y-1/2" />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 relative">
             {steps.map((step, index) => {
               const Icon = step.icon
               return (
@@ -94,14 +94,14 @@ const HowItWorks = () => {
                   transition={{ delay: index * 0.15, duration: 0.6 }}
                 >
                   <Card className="text-center h-full">
-                    <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-12 h-12 bg-gradient-to-br from-primary-600 to-primary-700 rounded-full flex items-center justify-center text-white font-black text-lg shadow-lg z-10">
+                    <div className="absolute -top-3 sm:-top-4 left-1/2 -translate-x-1/2 w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-primary-600 to-primary-700 rounded-full flex items-center justify-center text-white font-black text-base sm:text-lg shadow-lg z-10">
                       {step.number}
                     </div>
-                    <div className="w-20 h-20 bg-primary-50 rounded-2xl flex items-center justify-center mx-auto mb-6 mt-4">
-                      <Icon className="w-10 h-10 text-primary-600" />
+                    <div className="w-16 h-16 sm:w-20 sm:h-20 bg-primary-50 rounded-xl sm:rounded-2xl flex items-center justify-center mx-auto mb-4 sm:mb-6 mt-3 sm:mt-4">
+                      <Icon className="w-8 h-8 sm:w-10 sm:h-10 text-primary-600" />
                     </div>
-                    <h3 className="text-xl font-bold text-slate-900 mb-3">{step.title}</h3>
-                    <p className="text-slate-600 leading-relaxed text-sm">{step.description}</p>
+                    <h3 className="text-lg sm:text-xl font-bold text-slate-900 mb-2 sm:mb-3">{step.title}</h3>
+                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed px-2">{step.description}</p>
                   </Card>
                 </motion.div>
               )
