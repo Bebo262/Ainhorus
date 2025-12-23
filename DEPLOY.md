@@ -20,12 +20,10 @@ git commit -m "Initial commit"
 ### 3. Connect Local Repository to GitHub
 
 ```bash
-git remote add origin https://github.com/YOUR_USERNAME/Ainhorus.git
+git remote add origin https://github.com/Bebo262/Ainhorus.git
 git branch -M main
 git push -u origin main
 ```
-
-Replace `YOUR_USERNAME` with your GitHub username.
 
 ### 4. Update Base Path (if repository name is different)
 
@@ -62,7 +60,7 @@ This will:
 
 Your site will be available at:
 ```
-https://YOUR_USERNAME.github.io/Ainhorus/
+https://Bebo262.github.io/Ainhorus/
 ```
 
 **Note:** It may take a few minutes for the site to be available after deployment.
