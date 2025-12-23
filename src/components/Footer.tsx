@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { GraduationCap, Sparkles, Github, Linkedin, Twitter } from 'lucide-react'
+import { GraduationCap, Sparkles, Instagram, Linkedin, Twitter } from 'lucide-react'
 import Container from './ui/Container'
 
 const Footer = () => {
@@ -62,15 +62,17 @@ const Footer = () => {
             <h4 className="font-bold text-lg mb-4">Connect</h4>
             <div className="flex gap-4">
               {[
-                { icon: Github, label: 'GitHub' },
-                { icon: Linkedin, label: 'LinkedIn' },
-                { icon: Twitter, label: 'Twitter' },
+                { icon: Instagram, label: 'Instagram', href: 'https://www.instagram.com/ain_horus_?igsh=YXIyb3pkaXI1NHI4&utm_source=qr' },
+                { icon: Linkedin, label: 'LinkedIn', href: '#' },
+                { icon: Twitter, label: 'Twitter', href: '#' },
               ].map((social) => {
                 const Icon = social.icon
                 return (
                   <motion.a
                     key={social.label}
-                    href="#"
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="w-10 h-10 rounded-lg bg-slate-800 flex items-center justify-center text-slate-400 hover:text-primary-400 hover:bg-slate-700 transition-colors"
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.95 }}
